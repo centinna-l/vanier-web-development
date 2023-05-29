@@ -104,3 +104,81 @@ console.log(
     return product * number;
   }, 1)
 );
+
+// Given an array of objects representing students with their names and grades,
+// calculate the average grade of all the students.
+
+const students = [
+  { name: "Alice", grade: 80 },
+  { name: "Bob", grade: 90 },
+  { name: "Charlie", grade: 75 },
+  { name: "David", grade: 85 },
+];
+
+console.log(
+  students.reduce((average, student) => {
+    return average + student.grade;
+  }, 0) / students.length
+);
+
+/**
+ * Given an array of objects representing products with their names and prices,
+ *  find the product with the highest price.
+ */
+
+const products = [
+  { name: "Product 1", price: 10 },
+  { name: "Product 2", price: 15 },
+  { name: "Product 3", price: 20 },
+  { name: "Product 4", price: 12 },
+];
+
+console.log(
+  products.reduce((highest, product) => {
+    return product.price > highest.price ? product : highest;
+  })
+);
+
+// Given an array of numbers, remove all duplicates and return the new array.
+const numbers2 = [1, 2, 3, 2, 4, 3, 5, 6, 5, 4];
+
+console.log(
+  numbers2.reduce((unique, number) => {
+    if (!unique.includes(number)) {
+      unique.push(number);
+    }
+    return unique;
+  }, [])
+);
+
+/**
+ * Given an array of strings,
+ * find the frequency of each word and return an object
+ * with the word as the key and its frequency as the value.
+ */
+
+const words = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+console.log(
+  words.reduce((frequency, word) => {
+    if (frequency[word]) {
+      frequency[word]++;
+    } else {
+      frequency[word] = 1;
+    }
+    return frequency;
+  }, {})
+);
+
+/**
+ * Given an array of objects representing books with their titles and authors,
+ * sort the books alphabetically by their titles.
+ */
+
+const books1 = [
+  { title: "Book C", author: "Author C" },
+  { title: "Book A", author: "Author A" },
+  { title: "Book B", author: "Author B" },
+];
+
+console.log(books1.sort((a, b) => a.title.localeCompare(b.title)));
