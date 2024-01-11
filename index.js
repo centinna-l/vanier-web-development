@@ -12,3 +12,4 @@ const div = document.querySelector("div");
 const spanHi = document.querySelector("#hi");
 const spanbye = document.querySelector("#bye");
 console.log(spanHi.getAttribute("id"));
+console.log("hello")
